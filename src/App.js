@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from './firebase';
+import firebase from './config/firebase';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import About from './components/About';
