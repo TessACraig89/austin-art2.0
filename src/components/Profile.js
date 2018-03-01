@@ -9,7 +9,7 @@ class Profile extends Component {
   constructor() {
       super();
       this.state = {
-        currentPosts: '',
+        showModal: false,
         titleName: '',
         imageURL: '',
         locationAddress: '',
@@ -17,11 +17,12 @@ class Profile extends Component {
         user: null
       }
       this.handleChange = this.handleChange.bind(this);
-      // this.handleUpdateChange = this.handleUpdateChange.bind(this);
+      this.handleUpdateChange = this.handleUpdateChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
-      // this.updateThings = this.updateThings.bind(this);
-      // this.handleShow = this.handleShow.bind(this);
-      // this.handleClose = this.handleClose.bind(this);
+      this.removePost = this.removePost.bind(this);
+      this.updateThings = this.updateThings.bind(this);
+      this.handleShow = this.handleShow.bind(this);
+      this.handleClose = this.handleClose.bind(this);
   }
   /////////Modal open/close //////////////////////////////////////////////////////
   handleClose() {
@@ -97,59 +98,64 @@ class Profile extends Component {
   render() {
     return (
       <div className='profile'>
-        <header>
-            <div className="wrapper">
+          <div className='container'>
               <h1>Username</h1>
-              <Link className="toProfileFromNewLink" to={'/new'}><button className='navButton' id='toProfileFromNewButton'>Go To Profile</button></Link>
+              <Link className="toAboutLink" to={'/new'}><button>ADD </button></Link>
               <h2>Posts</h2>
-            </div>
-        </header>
-        <div className='container'>
+
         <section className='display-post'>
             <div className="wrapper">
               <ul>
                 {this.state.posts.map((post) => {
                   return (
-                    <li key={post.id}>
+                    <div>
+                    <h3 key={post.id}></h3>
                       <h3>{post.title}</h3>
-                      <p>Image URL:{post.image}
-                      </p>
-                      <p>Location:{post.location}
-                      </p>
-                      <button onClick={() => this.removePost(post.id)}>Remove Post</button>
-                    <div className="modal-container">
-                      <button type="button" className="btn btn-success btn-lg" onClick={ ()=> this.handleShow(post.id)}>Edit!</button>
-                      <Modal show={this.state.showModal === post.id} onHide={this.handleClose} bsSize="large">
-                        <Modal.Header>
-                          <Modal.Title>Edit Post</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                          <form onSubmit={this.handleSubmit}>
-                            <label className="label10">Title:</label>
-                            <input type='text' className="input-lg" name='title' placeholder={post.title} onChange={this.handleUpdateChange}
-                            value={this.state.titleName}
-                            />
-                            <br/>
-                            <br/>
-                                  <br/>
-                                  <br/>
-                                  <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updateThings(post)}>Save changes</button>
-                            </form>
-                        </Modal.Body>
-                        <Modal.Footer>
-                          <button type="button" className="btn btn-info btn-lg" data-dismiss="modal" onClick={this.handleClose}>Close</button>
-                        </Modal.Footer>
-                      </Modal>
-                    </div>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
+<div className="deleteBut">
+  <div className="modal-container">
+    <button type="button" className="btn btn-success btn-lg" onClick={ ()=> this.handleShow(post.id)}>Edit</button>
+    <Modal show={this.state.showModal === post.id} onHide={this.handleClose} bsSize="large">
+      <Modal.Header>
+        <Modal.Title>Edit Post</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <form onSubmit={this.handleSubmit}>
+          <label className="label10">Title:</label>
+          <input type='text' className="input-lg" name='titleName' placeholder={post.title} onChange={this.handleUpdateChange}
+          value={this.state.titleName}
+          />
+          <br/>
+          <br/>
+            <label className="label9">Location:</label>
+            <textarea className="editthis input-lg" type='text' placeholder={post.location} name='locationAddress' id='locationAddress'  onChange={this.handleUpdateChange}  value={this.state.locationAddress}/>
+            <label className="label9">Image:</label>
+            <textarea className="editthis input-lg" type='text' placeholder={post.imageURL} name='imageURL' id='imageURL'  onChange={this.handleUpdateChange}  value={this.state.imageURL}/>
+                      <br/>
+                <br/>
+                <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updateThings(post)}>Save changes</button>
+            </form>
+
+        </Modal.Body>
+        <Modal.Footer>
+          <button type="button" className="btn btn-info btn-lg" data-dismiss="modal" onClick={this.handleClose}>Close</button>
+
+          </Modal.Footer>
+
+      </Modal>
+
+</div>
+            <button className="btn btn-danger btn-lg" id="but" onClick={() => this.removePost(post.id)}>(X)</button>
+          </div>
+
+</div>
+                )
+              })}
+            </ul>
+          </div>
         </section>
       </div>
     </div>
-  );
+    )
   }
 }
 export default Profile;
