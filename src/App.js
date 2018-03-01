@@ -10,6 +10,7 @@ import Art from './components/Art';
 import Login from './components/Login';
 import New from './components/New';
 import Profile from './components/Profile';
+import Test from './components/Test';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path='/login' component={ Login }/>
             <Route exact path='/new' component={ New }/>
             <Route exact path='/profile' component={ Profile }/>
+            <Route exact path='/test' component={ Test }/>
           </Switch>
       </div>
     );

@@ -5,6 +5,7 @@ import Art from '../containers/Art';
 import Login from '../containers/Login';
 import New from '../containers/New';
 import Profile from '../containers/Profile';
+import Test from '../containers/Test';
 
 export default (
   <Switch>
@@ -13,5 +14,6 @@ export default (
     <Route exact path='/login' component={ Login }/>
     <Route path='/new' component={ New }/>
     <Route exact path='/profile' component={ Profile }/>
+    <Route exact path='/test' component={ Test }/>
   </Switch>
 )
