@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import firebase from '../config/firebase.js';
+import firebase, { auth, provider } from '../config/firebase.js';
 import {Link} from 'react-router-dom';
 
 class New extends Component {

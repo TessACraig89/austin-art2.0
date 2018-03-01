@@ -6,12 +6,12 @@ class Header extends Component{
   render(){
     return (
       <div className="header">
-        <h1 class='headerTitle'>Austin Street Art</h1>
-        <h2 class='headerSub'>A site dedicated to the incredible street art of Austin</h2>
-        <nav class='nav'>
-          <Link class="toArtLink" to={'/art'}><button class='navButton' id='artButton'>Art</button></Link>
-          <Link class="toAboutLink" to={'/'}><button class='navButton' id='aboutButton'>About</button></Link>
-          <Link class="toLoginLink" to={'/login'}><button class='navButton'
+        <h1 className='headerTitle'>Austin Street Art</h1>
+        <h2 className='headerSub'>A site dedicated to the incredible street art of Austin</h2>
+        <nav className='nav'>
+          <Link className="toArtLink" to={'/art'}><button className='navButton' id='artButton'>Art</button></Link>
+          <Link className="toAboutLink" to={'/'}><button className='navButton' id='aboutButton'>About</button></Link>
+          <Link className="toLoginLink" to={'/login'}><button className='navButton'
          id='loginButton'>Login</button></Link>
       </nav>
       </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import firebase from '../config/firebase.js';
+import firebase, { auth, provider } from '../config/firebase.js';
 import {Link} from 'react-router-dom';
 
 class Art extends Component {
@@ -11,7 +11,8 @@ class Art extends Component {
         titleName: '',
         imageURL: '',
         locationAddress: '',
-        posts: []
+        posts: [],
+        user: null
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -78,6 +79,7 @@ class Art extends Component {
             <li key={post.id}>
               <h3>{post.title}</h3>
               <p>Location:{post.location}</p>
+
             </li>
                   )
                 })}
