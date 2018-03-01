@@ -3,6 +3,7 @@ import '../App.css';
 import firebase, { auth, provider } from '../config/firebase.js';
 import {Link} from 'react-router-dom';
 
+
 class New extends Component {
   constructor() {
       super();

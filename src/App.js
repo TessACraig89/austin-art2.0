@@ -37,8 +37,8 @@ export default App;
 //   // constructor is the hook for our app and setting a default value for our input's state
 //   constructor() {
 //     super();
-//     // conect inputs to component's state, so react can keep track of them
-//       // reate a variable called items inside of default state. This will eventually hold all of the potluck items that are currently being tracked inside of our Firebase databas
+    // connect inputs to component's state, so react can keep track of them
+    //   reate a variable called items inside of default state. This will eventually hold all of the potluck items that are currently being tracked inside of our Firebase databas
 //     this.state = {
 //       currentItem: '',
 //       username: '',
