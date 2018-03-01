@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import '../App.css';
 import firebase from '../config/firebase.js';
+import {Link} from 'react-router-dom';
 
 class Art extends Component {
   constructor() {
       super();
       this.state = {
         currentPosts: '',
+        titleName: '',
+        imageURL: '',
         locationAddress: '',
         posts: []
       }
@@ -22,12 +25,14 @@ class Art extends Component {
     e.preventDefault();
     const postsRef = firebase.database().ref('posts');
     const post = {
-      title: this.state.currentPost,
+      title: this.state.titleName,
+      image: this.state.imageURL,
       location: this.state.locationAddress
     }
     postsRef.push(post);
     this.setState({
-      currentPost: '',
+      titleName: '',
+      imageURL: '',
       locationAddress: ''
     });
   }
@@ -40,7 +45,8 @@ class Art extends Component {
         newState.push({
           id: post,
           title: posts[post].title,
-          user: posts[post].location
+          image: posts[post].image,
+          location: posts[post].location
         });
       }
       this.setState({
@@ -57,29 +63,22 @@ class Art extends Component {
       <div className='art'>
         <header>
             <div className="wrapper">
-              <h1>Art</h1>
+              <h1>Username</h1>
+              <Link class="toProfileFromNewLink" to={'/profile'}><button class='navButton' id='toProfileFromNewButton'>Go To Profile</button></Link>
+              <h2>Art</h2>
             </div>
         </header>
         <div className='container'>
-          <section className='add-post'>
-              <form onSubmit={this.handleSubmit}>
-                <input type="text" name="locationAddress" placeholder="Location" onChange={this.handleChange} value={this.state.locationAddress} />
-                <input type="text" name="currentPost" placeholder="Post" onChange={this.handleChange} value={this.state.currentPost} />
-                <button>Add Post</button>
-              </form>
-        </section>
-        <section className='display-post'>
-            <div className="wrapper">
-              <ul>
-                {this.state.posts.map((post) => {
-                  return (
-                    <li key={post.id}>
-                      <h3>{post.title}</h3>
-                      <p>Location:{post.location}
-                      //add a button to our UI with an onClick that calls our removepost method and passes it the post's ke
-                      <button onClick={() => this.removePost(post.id)}>Remove Post</button>
-                      </p>
-                    </li>
+<h2>Posts</h2>
+<section className='display-post'>
+    <div className="wrapper">
+      <ul>
+        {this.state.posts.map((post) => {
+          return (
+            <li key={post.id}>
+              <h3>{post.title}</h3>
+              <p>Location:{post.location}</p>
+            </li>
                   )
                 })}
               </ul>
