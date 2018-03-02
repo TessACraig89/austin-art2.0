@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../App.css';
+import './Profile.css';
 import firebase, { auth, provider } from '../../config/firebase.js';
 import {Link} from 'react-router-dom';
 import {Modal} from 'react-bootstrap';

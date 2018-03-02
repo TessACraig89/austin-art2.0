@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../App.css';
+import './New.css';
 import firebase, { auth, provider } from '../../config/firebase.js';
 import {Link} from 'react-router-dom';
 import Image from '../Image/Image';

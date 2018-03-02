@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../App.css';
+import './Image.css';
 import ImageUploader from 'react-firebase-image-uploader';
 import { connect } from 'react-firebase-storage-connector';
 import firebase, { auth, provider } from '../../config/firebase.js';
