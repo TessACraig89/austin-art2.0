@@ -1,0 +1,51 @@
+.art {
+  position: relative;
+  top: 150px;
+}
+
+.artTitle {
+  font-size: 60px;
+  font-family:'Amaranth';
+}
+
+.posts {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  bottom: 20px;
+}
+
+.postTitle {
+  font-size: 40px;
+  border-bottom: 10px #a289ed;
+  border-bottom-style: double;
+  border-radius: 15px;
+  font-family:'Amaranth';
+}
+
+.postImg {
+  font-family:'Amaranth';
+  font-size: 25px;
+}
+
+.postLocation {
+  font-family:'Amaranth';
+  font-size: 25px;
+}
+
+.artBtn {
+  font-size: 40px;
+  border-width: 1px;
+  border-color: white;
+  text-align: center;
+  font-family: 'Segoe UI Symbol';
+}
+
+.artBtn:hover {
+  color: #f183f7;
+}
+
+#artPostSec2 {
+  position: relative;
+  bottom: 5px;
+}

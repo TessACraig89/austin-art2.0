@@ -61,34 +61,56 @@ class Art extends Component {
   render() {
     return (
       <div className='art'>
-        <header>
-              <h1>Art</h1>
-        </header>
+              <h1 className="artTitle">Art</h1>
         <div className='container'>
-            <h2>Posts</h2>
-            <section className='display-post'>
-                <div className="wrapper">
-                    <ul>
-                        {this.state.posts.map((post) => {
-                            return (
-                                <li key={post.id}>
-                                    <h3>{post.title}</h3>
-                                    <p>{post.image}</p>
-                                    <p>Location:{post.location}</p>
-                                    <button>Favorite</button>
-                                    {/*}{this.state.favoriteStatus = true?
-                                    <div>
-                                    <button onClick={this.unfavorite}>Unfavorite</button>
-                                    </div>
-                                  :
-                                    <button onClick={this.favorite}>Favorite</button>
-                                  }*/}
-                              </li>
-                            )
-                        })}
-                    </ul>
-                </div>
-            </section>
+            <div className="posts">
+                <section className='display-post'>
+                    <div className="wrapper">
+                        <ul>
+                            {this.state.posts.map((post) => {
+                                return (
+                                    <li key={post.id}>
+                                        <h2 className="postTitle">{post.title}</h2>
+                                        <p className="postImg">{post.image}</p>
+                                        <p className="postLocation">Location : {post.location}</p>
+                                        <button className="artBtn"> &hearts;</button>
+                                        {/*}{this.state.favoriteStatus = true?
+                                        <div>
+                                        <button onClick={this.unfavorite}>Unfavorite</button>
+                                        </div>
+                                      :
+                                        <button onClick={this.favorite}>Favorite</button>
+                                      }*/}
+                                  </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </section>
+                <section id="artPostSec2" className='display-post'>
+                    <div className="wrapper">
+                        <ul>
+                            {this.state.posts.map((post) => {
+                                return (
+                                    <li key={post.id}>
+                                        <h3 className="postTitle">{post.title}</h3>
+                                        <p className="postImg">{post.image}</p>
+                                        <p className="postLocation">Location : {post.location}</p>
+                                        <button className="artBtn"> &hearts;</button>
+                                        {/*}{this.state.favoriteStatus = true?
+                                        <div>
+                                        <button onClick={this.unfavorite}>Unfavorite</button>
+                                        </div>
+                                      :
+                                        <button onClick={this.favorite}>Favorite</button>
+                                      }*/}
+                                  </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </section>
+            </div>
       </div>
     </div>
   );
