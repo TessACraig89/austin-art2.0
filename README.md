@@ -53,8 +53,6 @@ The Minimum Viable Product version of the Austin Art web app is a much simplifie
 
 ![New Post](./src/static/images/new-post.png)
 
-## Work In Progress
-
 > To learn more about the developer of Psyche Tracker, Tess Craig, visit her [Linkedin](https://www.linkedin.com/in/tessashleycraig/) and view her other [Github](https://github.com/TessACraig89) projects.
 
 <!-- ## Downloading Instructions
