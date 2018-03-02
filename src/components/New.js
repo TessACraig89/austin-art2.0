@@ -98,6 +98,7 @@ class New extends Component {
               }
             </div>
         </header>
+        <h3>New Post</h3>
         <div className='container'>
           <section className='add-post'>
               <form onSubmit={this.handleSubmit}>
@@ -107,24 +108,6 @@ class New extends Component {
                 {/*<Test/>*/}
                 <button>Add Post</button>
               </form>
-        </section>
-        <section className='display-post'>
-            <div className="wrapper">
-              <ul>
-                {this.state.posts.map((post) => {
-                  return (
-                    <li key={post.id}>
-                      <h3>Title: {post.title}</h3>
-                      <p>Image: {post.image}
-                      </p>
-                      <p>Location: {post.location}
-                      </p>
-                      <button onClick={() => this.removePost(post.id)}>Remove</button>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
         </section>
       </div>
     </div>
