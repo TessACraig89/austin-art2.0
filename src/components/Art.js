@@ -88,7 +88,17 @@ class Art extends Component {
           return (
             <li key={post.id}>
               <h3>{post.title}</h3>
+              <p>{post.image}
+              </p>
               <p>Location:{post.location}</p>
+              {/*}{this.state.favoriteStatus = true?
+                <div>
+                <button onClick={this.unfavorite}>Unfavorite</button>
+                </div>
+              :
+                <button onClick={this.favorite}>Favorite</button>
+              }*/}
+              <button onClick={() => this.removePost(post.id)}>Remove</button>
             </li>
                   )
                 })}
