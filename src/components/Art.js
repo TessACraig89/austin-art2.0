@@ -5,15 +5,8 @@ import {Link} from 'react-router-dom';
 import Header from './Header';
 
 class Art extends Component {
-  // set default value for input's state
   constructor() {
       super();
-      // connect inputs to component's state, so react can keep track of them
-        // titleName input
-        // imageURL input
-        // location input
-        // create a variable posts inside of default state. This holds all of the posts that are currently being tracked inside of our Firebase database.
-        //
       this.state = {
         titleName: '',
         imageURL: '',
@@ -21,12 +14,9 @@ class Art extends Component {
         posts: [],
         user: null
       }
-      // access this(constructor() component) in our handleChange method, bind handleChange method in constructor() component
-      // access this(constructor() component) in our handleSubmit method, bind handleSubmit method in constructor() component
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
   }
-  // catch-all handleChange method that receives the event from our inputs, and updates that input's corresponding piece of state,  using brackets to dynamically determine key name in an object literal, check out the MDN docs on computed properties
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -95,7 +85,6 @@ class Art extends Component {
                                   :
                                     <button onClick={this.favorite}>Favorite</button>
                                   }*/}
-                                  <button onClick={() => this.removePost(post.id)}>Remove</button>
                               </li>
                             )
                         })}

@@ -27,8 +27,6 @@ class Profile extends Component {
       this.login = this.login.bind(this);
       this.logout = this.logout.bind(this);
   }
-  /////////Modal open/close //////////////////////////////////////////////////////
-  handleClose() {
     this.setState({ showModal: false });
   }
   handleShow(id) {
@@ -36,7 +34,7 @@ class Profile extends Component {
       showModal: id,
     });
   }
-  // catch-all handleChange method calls, updates that input's corresponding piece of state,  using brackets to dynamically determine key name in an object literal
+  // catch-all method calls, updates that input's corresponding piece of state,  using brackets to dynamically determine key name in an object literal
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
