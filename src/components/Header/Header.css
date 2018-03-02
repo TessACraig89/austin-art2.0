@@ -45,6 +45,7 @@ button:focus {outline:0;}
   border-width: 5px;
   border-color: black;
   text-align: center;
+  font-family:'Amaranth';
 }
 
 #toProfileBtn {
