@@ -14,7 +14,8 @@ class Profile extends Component {
         imageURL: '',
         locationAddress: '',
         posts: [],
-        user: null
+        user: null,
+        userFavorites: []
       }
       // bind methods to constructor
       this.handleChange = this.handleChange.bind(this);
@@ -140,13 +141,12 @@ class Profile extends Component {
           <div className='container'>
               {this.state.user ?
                 <div className='user-profile'>
-                  <img src={this.state.user.photoURL} />
-                  <h1>{this.state.user.displayName}</h1>
+                  <img className="userImg" src={this.state.user.photoURL} />
+                  <h1 className="username">{this.state.user.displayName}</h1>
                 </div>
                 :
                 <h2>{null}</h2>
               }
-              <Link to={'/new'}><button>ADD </button></Link>
               <h2>Favorites</h2>
                   <section className='display-post'>
                       <div className="wrapper">
@@ -155,7 +155,9 @@ class Profile extends Component {
                                   return (
                                       <li key={post.id}>
                                           <h3>{post.title}</h3>
-                                          <p>{post.image}</p>
+                                          <p><img id="image" src={post.image} alt='image'/></p>
+                                                {/*<img src={require("{post.image}")} alt='image'/>
+                                                <img className="aboutCollage" src={require("../../static/images/skyline.png")}></img>*/}
                                           <p>Location:{post.location}</p>
                                           <button>Unfavorite</button>
                                           {/*}{this.state.favoriteStatus = true?
@@ -171,6 +173,7 @@ class Profile extends Component {
                           </ul>
                       </div>
                   </section>
+              <Link to={'/new'}><button>ADD </button></Link>
               <h2>Posts</h2>
                   <section className='display-post'>
                       <div className="wrapper">

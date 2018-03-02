@@ -1,0 +1,23 @@
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.userImg {
+  width: 200px;
+  height: 200px;
+  border: black 4px solid;
+  border-radius: 100px;
+}
+
+.username {
+  font-size: 40px;
+  position: relative;
+  bottom: 20px;
+}
+
+.profile {
+  position: relative;
+  top: 160px;
+  font-family:'Amaranth';
+}

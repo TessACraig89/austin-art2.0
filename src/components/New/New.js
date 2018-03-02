@@ -104,7 +104,9 @@ class New extends Component {
               <form onSubmit={this.handleSubmit}>
                 <input type="text" name="titleName" placeholder="Title" onChange={this.handleChange} value={this.state.currentPost} />
                 <input type="text" name="locationAddress" placeholder="Location" onChange={this.handleChange} value={this.state.locationAddress} />
-                <input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageValue} />
+                {/*<input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageValue} />*/}
+                <input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange}  value={this.state.imageValue} />
+                {/*<input class="col col-4 form-control my-1" style="margin: 5px;" placeholder="Kitty URL" type="text" name="url" />*/}
                 {/*<Image/>*/}
                 <button>Add Post</button>
               </form>
