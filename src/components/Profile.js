@@ -125,7 +125,7 @@ class Profile extends Component {
       image: this.state.imageURL,
       location: this.state.locationAddress
     };
-    // once passed to db, close modal, write all (updates) values to the db 
+    // once passed to db, close modal, write all (updates) values to the db
     postRef.update(updates);
     this.handleClose();
     this.setState({
@@ -141,58 +141,82 @@ class Profile extends Component {
               {this.state.user ?
                 <div className='user-profile'>
                   <img src={this.state.user.photoURL} />
-                  <h2>{this.state.user.displayName}</h2>
+                  <h1>{this.state.user.displayName}</h1>
                 </div>
                 :
                 <h2>{null}</h2>
               }
-              <Link className="toAboutLink" to={'/new'}><button>ADD </button></Link>
+              <Link to={'/new'}><button>ADD </button></Link>
+              <h2>Favorites</h2>
+                  <section className='display-post'>
+                      <div className="wrapper">
+                          <ul>
+                              {this.state.posts.map((post) => {
+                                  return (
+                                      <li key={post.id}>
+                                          <h3>{post.title}</h3>
+                                          <p>{post.image}</p>
+                                          <p>Location:{post.location}</p>
+                                          <button>Unfavorite</button>
+                                          {/*}{this.state.favoriteStatus = true?
+                                          <div>
+                                          <button onClick={this.unfavorite}>Unfavorite</button>
+                                          </div>
+                                        :
+                                          null
+                                        }*/}
+                                    </li>
+                                  )
+                              })}
+                          </ul>
+                      </div>
+                  </section>
               <h2>Posts</h2>
-              <section className='display-post'>
-                  <div className="wrapper">
-                    <ul>
-                      {/* once I have a list of all posts being grabbed from Firebase and stored inside state, map over it and print the results on to the page */}
-                      {this.state.posts.map((post) => {
-                        return (
-                          <div>
-                          <h3 key={post.id}></h3>
-                            <h3>{post.title}</h3>
-                    <div className="delete">
-                        <div className="modal-container">
-                            <button onClick={ ()=> this.handleShow(post.id)}>Edit</button>
-                            {/* modal show and close method calls */}
-                            <Modal show={this.state.showModal === post.id} onHide={this.handleClose}>
-                              <Modal.Header>
-                                  <Modal.Title>Edit Post</Modal.Title>
-                              </Modal.Header>
-                              <Modal.Body>
-                                  <form onSubmit={this.handleSubmit}>
-                                      <label>Title:</label>
-                                          <input type='text' className="input-lg" name='titleName' placeholder={post.title} onChange={this.handleUpdateChange} value={this.state.titleName}/>
-                                      <br/>
-                                      <br/>
-                                      <label className="label9">Location:</label>
-                                          <textarea className="editthis input-lg" type='text' placeholder={post.location} name='locationAddress' id='locationAddress'  onChange={this.handleUpdateChange}  value={this.state.locationAddress}/>
-                                      <label className="label9">Image:</label>
-                                          <textarea className="editthis input-lg" type='text' placeholder={post.imageURL} name='imageURL' id='imageURL'  onChange={this.handleUpdateChange}  value={this.state.imageURL}/>
-                                      <br/>
-                                      <br/>
-                                      <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updatePost(post)}>Save changes</button>
-                                  </form>
-                              </Modal.Body>
-                              <Modal.Footer>
-                                  <button type="button" className="btn btn-info btn-lg" data-dismiss="modal" onClick={this.handleClose}>Close</button>
-                              </Modal.Footer>
-                          </Modal>
+                  <section className='display-post'>
+                      <div className="wrapper">
+                        <ul>
+                          {/* once I have a list of all posts being grabbed from Firebase and stored inside state, map over it and print the results on to the page */}
+                          {this.state.posts.map((post) => {
+                            return (
+                              <div>
+                              <h3 key={post.id}></h3>
+                                <h3>{post.title}</h3>
+                        <div className="delete">
+                            <div className="modal-container">
+                                <button onClick={ ()=> this.handleShow(post.id)}>Edit</button>
+                                {/* modal show and close method calls */}
+                                <Modal show={this.state.showModal === post.id} onHide={this.handleClose}>
+                                  <Modal.Header>
+                                      <Modal.Title>Edit Post</Modal.Title>
+                                  </Modal.Header>
+                                  <Modal.Body>
+                                      <form onSubmit={this.handleSubmit}>
+                                          <label>Title:</label>
+                                              <input type='text' className="input-lg" name='titleName' placeholder={post.title} onChange={this.handleUpdateChange} value={this.state.titleName}/>
+                                          <br/>
+                                          <br/>
+                                          <label className="label9">Location:</label>
+                                              <textarea className="editthis input-lg" type='text' placeholder={post.location} name='locationAddress' id='locationAddress'  onChange={this.handleUpdateChange}  value={this.state.locationAddress}/>
+                                          <label className="label9">Image:</label>
+                                              <textarea className="editthis input-lg" type='text' placeholder={post.imageURL} name='imageURL' id='imageURL'  onChange={this.handleUpdateChange}  value={this.state.imageURL}/>
+                                          <br/>
+                                          <br/>
+                                          <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updatePost(post)}>Save changes</button>
+                                      </form>
+                                  </Modal.Body>
+                                  <Modal.Footer>
+                                      <button type="button" className="btn btn-info btn-lg" data-dismiss="modal" onClick={this.handleClose}>Close</button>
+                                  </Modal.Footer>
+                              </Modal>
+                            </div>
+                            <button onClick={() => this.removePost(post.id)}>Remove</button>
                         </div>
-                        <button onClick={() => this.removePost(post.id)}>Remove</button>
+                      </div>
+                          )
+                        })}
+                        </ul>
                     </div>
-                  </div>
-                      )
-                    })}
-                    </ul>
-                </div>
-              </section>
+                  </section>
       </div>
     </div>
     )

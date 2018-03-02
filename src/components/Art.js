@@ -62,7 +62,7 @@ class Art extends Component {
     return (
       <div className='art'>
         <header>
-              <h2>Art</h2>
+              <h1>Art</h1>
         </header>
         <div className='container'>
             <h2>Posts</h2>
@@ -75,6 +75,7 @@ class Art extends Component {
                                     <h3>{post.title}</h3>
                                     <p>{post.image}</p>
                                     <p>Location:{post.location}</p>
+                                    <button>Favorite</button>
                                     {/*}{this.state.favoriteStatus = true?
                                     <div>
                                     <button onClick={this.unfavorite}>Unfavorite</button>
