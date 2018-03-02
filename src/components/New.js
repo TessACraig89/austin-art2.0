@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import firebase, { auth, provider } from '../config/firebase.js';
 import {Link} from 'react-router-dom';
-
+import Test from './Test';
 
 class New extends Component {
   constructor() {
@@ -10,9 +10,10 @@ class New extends Component {
       this.state = {
         currentPosts: '',
         titleName: '',
-        imageURL: '',
+        imageValue: '',
         locationAddress: '',
-        posts: []
+        posts: [],
+        creatorName: '',
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,14 +28,16 @@ class New extends Component {
     const postsRef = firebase.database().ref('posts');
     const post = {
       title: this.state.titleName,
-      image: this.state.imageURL,
-      location: this.state.locationAddress
+      image: this.state.imageValue,
+      location: this.state.locationAddress,
+      creator: this.state.creatorName
     }
     postsRef.push(post);
     this.setState({
       titleName: '',
-      imageURL: '',
-      locationAddress: ''
+      imageValue: '',
+      locationAddress: '',
+      creatorName: ''
     });
   }
   componentDidMount() {
@@ -47,7 +50,8 @@ class New extends Component {
           id: post,
           title: posts[post].title,
           image: posts[post].image,
-          location: posts[post].location
+          location: posts[post].location,
+          creator: posts[post].creator
         });
       }
       this.setState({
@@ -65,7 +69,6 @@ class New extends Component {
         <header>
             <div className="wrapper">
               <h1>Username</h1>
-              <Link class="toProfileFromNewLink" to={'/profile'}><button class='navButton' id='toProfileFromNewButton'>Go To Profile</button></Link>
               <h2>New Post</h2>
             </div>
         </header>
@@ -74,7 +77,8 @@ class New extends Component {
               <form onSubmit={this.handleSubmit}>
                 <input type="text" name="titleName" placeholder="Title" onChange={this.handleChange} value={this.state.currentPost} />
                 <input type="text" name="locationAddress" placeholder="Location" onChange={this.handleChange} value={this.state.locationAddress} />
-                <input type="text" name="imageURL" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageURL} />
+                <input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageValue} />
+                <p>
                 <button>Add Post</button>
               </form>
         </section>
@@ -85,10 +89,11 @@ class New extends Component {
                   return (
                     <li key={post.id}>
                       <h3>{post.title}</h3>
-                      <p>Image URL:{post.image}
+                      <p>{post.image}
                       </p>
                       <p>Location:{post.location}
                       </p>
+                      <p>Created by:{post.creator}</p>
                       <button onClick={() => this.removePost(post.id)}>Remove Post</button>
                     </li>
                   )

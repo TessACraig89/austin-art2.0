@@ -7,7 +7,8 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      user: null
+      user: null,
+      userFavorites: []
     }
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);

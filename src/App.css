@@ -27,6 +27,10 @@
   to { transform: rotate(360deg); }
 }
 
+ul {
+  list-style-type: none;
+}
+/*//////////////// ABOUT ////////////////*/
 .aboutCollage {
 background-image: url("./static/images/skyline.png");
 }

@@ -75,7 +75,7 @@ class Header extends Component{
           {this.state.user ?
             <div>
               <button onClick={this.logout}>Logout</button>
-              <Link className="toAboutLink" to={'/profile'}><button className='navButton' id='aboutButton'>{this.state.user.displayName} Profile</button></Link>
+              <Link className="toAboutLink" to={'/profile'}><button className='navButton' id='aboutButton'>Profile</button></Link>
             </div>
           :
             <button onClick={this.login}>Log In</button>

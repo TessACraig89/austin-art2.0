@@ -23,6 +23,8 @@ class Profile extends Component {
       this.updateThings = this.updateThings.bind(this);
       this.handleShow = this.handleShow.bind(this);
       this.handleClose = this.handleClose.bind(this);
+      this.login = this.login.bind(this);
+      this.logout = this.logout.bind(this);
   }
   /////////Modal open/close //////////////////////////////////////////////////////
   handleClose() {
@@ -49,7 +51,8 @@ class Profile extends Component {
     const post = {
       title: this.state.titleName,
       image: this.state.imageURL,
-      location: this.state.locationAddress
+      location: this.state.locationAddress,
+      user: this.state.user.displayName || this.state.user.email
     }
     postsRef.push(post);
     this.setState({
@@ -58,7 +61,29 @@ class Profile extends Component {
       locationAddress: ''
     });
   }
+  logout() {
+    auth.signOut()
+      .then(() => {
+        this.setState({
+          user: null
+        });
+      });
+  }
+  login() {
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        const user = result.user;
+        this.setState({
+          user
+        });
+      });
+  }
   componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+    if (user) {
+      this.setState({ user });
+    }
+  });
     const postsRef = firebase.database().ref('posts');
     postsRef.on('value', (snapshot) => {
       let posts = snapshot.val();
@@ -99,7 +124,11 @@ class Profile extends Component {
     return (
       <div className='profile'>
           <div className='container'>
-              <h1>Username</h1>
+              {this.state.user ?
+                <h2>{this.state.user.displayName}</h2>
+                :
+                <h2>{null}</h2>
+              }
               <Link className="toAboutLink" to={'/new'}><button>ADD </button></Link>
               <h2>Posts</h2>
 
