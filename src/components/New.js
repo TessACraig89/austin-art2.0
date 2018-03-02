@@ -89,7 +89,10 @@ class New extends Component {
         <header>
             <div className="wrapper">
               {this.state.user ?
-                <h2>{this.state.user.displayName}</h2>
+                <div className='user-profile'>
+                  <img src={this.state.user.photoURL} />
+                  <h2>{this.state.user.displayName}</h2>
+                </div>
                 :
                 <h2>{null}</h2>
               }

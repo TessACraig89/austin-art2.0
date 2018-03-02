@@ -135,57 +135,59 @@ class Profile extends Component {
       <div className='profile'>
           <div className='container'>
               {this.state.user ?
-                <h2>{this.state.user.displayName}</h2>
+                <div className='user-profile'>
+                  <img src={this.state.user.photoURL} />
+                  <h2>{this.state.user.displayName}</h2>
+                </div>
                 :
                 <h2>{null}</h2>
               }
               <Link className="toAboutLink" to={'/new'}><button>ADD </button></Link>
               <h2>Posts</h2>
-
-        <section className='display-post'>
-            <div className="wrapper">
-              <ul>
-                {/* once I have a list of all posts being grabbed from Firebase and stored inside state, map over it and print the results on to the page */}
-                {this.state.posts.map((post) => {
-                  return (
-                    <div>
-                    <h3 key={post.id}></h3>
-                      <h3>{post.title}</h3>
-              <div className="deleteBut">
-                  <div className="modal-container">
-                      <button type="button" className="btn btn-success btn-lg" onClick={ ()=> this.handleShow(post.id)}>Edit</button>
-                      <Modal show={this.state.showModal === post.id} onHide={this.handleClose} bsSize="large">
-                        <Modal.Header>
-                            <Modal.Title>Edit Post</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <form onSubmit={this.handleSubmit}>
-                                <label className="label10">Title:</label>
-                                    <input type='text' className="input-lg" name='titleName' placeholder={post.title} onChange={this.handleUpdateChange} value={this.state.titleName}/>
-                                <br/>
-                                <br/>
-                                <label className="label9">Location:</label>
-                                    <textarea className="editthis input-lg" type='text' placeholder={post.location} name='locationAddress' id='locationAddress'  onChange={this.handleUpdateChange}  value={this.state.locationAddress}/>
-                                <label className="label9">Image:</label>
-                                    <textarea className="editthis input-lg" type='text' placeholder={post.imageURL} name='imageURL' id='imageURL'  onChange={this.handleUpdateChange}  value={this.state.imageURL}/>
-                                <br/>
-                                <br/>
-                                <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updateThings(post)}>Save changes</button>
-                            </form>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <button type="button" className="btn btn-info btn-lg" data-dismiss="modal" onClick={this.handleClose}>Close</button>
-                        </Modal.Footer>
-                    </Modal>
+              <section className='display-post'>
+                  <div className="wrapper">
+                    <ul>
+                      {/* once I have a list of all posts being grabbed from Firebase and stored inside state, map over it and print the results on to the page */}
+                      {this.state.posts.map((post) => {
+                        return (
+                          <div>
+                          <h3 key={post.id}></h3>
+                            <h3>{post.title}</h3>
+                    <div className="deleteBut">
+                        <div className="modal-container">
+                            <button type="button" className="btn btn-success btn-lg" onClick={ ()=> this.handleShow(post.id)}>Edit</button>
+                            <Modal show={this.state.showModal === post.id} onHide={this.handleClose} bsSize="large">
+                              <Modal.Header>
+                                  <Modal.Title>Edit Post</Modal.Title>
+                              </Modal.Header>
+                              <Modal.Body>
+                                  <form onSubmit={this.handleSubmit}>
+                                      <label className="label10">Title:</label>
+                                          <input type='text' className="input-lg" name='titleName' placeholder={post.title} onChange={this.handleUpdateChange} value={this.state.titleName}/>
+                                      <br/>
+                                      <br/>
+                                      <label className="label9">Location:</label>
+                                          <textarea className="editthis input-lg" type='text' placeholder={post.location} name='locationAddress' id='locationAddress'  onChange={this.handleUpdateChange}  value={this.state.locationAddress}/>
+                                      <label className="label9">Image:</label>
+                                          <textarea className="editthis input-lg" type='text' placeholder={post.imageURL} name='imageURL' id='imageURL'  onChange={this.handleUpdateChange}  value={this.state.imageURL}/>
+                                      <br/>
+                                      <br/>
+                                      <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updateThings(post)}>Save changes</button>
+                                  </form>
+                              </Modal.Body>
+                              <Modal.Footer>
+                                  <button type="button" className="btn btn-info btn-lg" data-dismiss="modal" onClick={this.handleClose}>Close</button>
+                              </Modal.Footer>
+                          </Modal>
+                        </div>
+                        <button onClick={() => this.removePost(post.id)}>Remove</button>
+                    </div>
                   </div>
-                  <button onClick={() => this.removePost(post.id)}>Remove</button>
-              </div>
-            </div>
-                )
-              })}
-              </ul>
-          </div>
-        </section>
+                      )
+                    })}
+                    </ul>
+                </div>
+              </section>
       </div>
     </div>
     )

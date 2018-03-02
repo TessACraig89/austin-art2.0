@@ -21,6 +21,7 @@ class Header extends Component{
     e.preventDefault();
     const postsRef = firebase.database().ref('posts');
     const post = {
+      // grab user's name or email from the state, and package it into user object so we pass to our Firebase database and render
       user: this.state.user.displayName || this.state.user.email
     }
   }
@@ -35,6 +36,7 @@ class Header extends Component{
   login() {
     auth.signInWithPopup(provider)
       .then((result) => {
+        // once logged in get user from result and store in variable user
         const user = result.user;
         this.setState({
           user

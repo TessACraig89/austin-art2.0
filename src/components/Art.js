@@ -74,37 +74,34 @@ class Art extends Component {
       <div className='art'>
         <header>
             <div className="wrapper">
-              <h1>Username</h1>
-              <Link class="toProfileFromNewLink" to={'/profile'}><button class='navButton' id='toProfileFromNewButton'>Go To Profile</button></Link>
               <h2>Art</h2>
             </div>
         </header>
         <div className='container'>
-<h2>Posts</h2>
-<section className='display-post'>
-    <div className="wrapper">
-      <ul>
-        {this.state.posts.map((post) => {
-          return (
-            <li key={post.id}>
-              <h3>{post.title}</h3>
-              <p>{post.image}
-              </p>
-              <p>Location:{post.location}</p>
-              {/*}{this.state.favoriteStatus = true?
-                <div>
-                <button onClick={this.unfavorite}>Unfavorite</button>
+            <h2>Posts</h2>
+            <section className='display-post'>
+                <div className="wrapper">
+                    <ul>
+                        {this.state.posts.map((post) => {
+                            return (
+                                <li key={post.id}>
+                                    <h3>{post.title}</h3>
+                                    <p>{post.image}</p>
+                                    <p>Location:{post.location}</p>
+                                    {/*}{this.state.favoriteStatus = true?
+                                    <div>
+                                    <button onClick={this.unfavorite}>Unfavorite</button>
+                                    </div>
+                                  :
+                                    <button onClick={this.favorite}>Favorite</button>
+                                  }*/}
+                                  <button onClick={() => this.removePost(post.id)}>Remove</button>
+                              </li>
+                            )
+                        })}
+                    </ul>
                 </div>
-              :
-                <button onClick={this.favorite}>Favorite</button>
-              }*/}
-              <button onClick={() => this.removePost(post.id)}>Remove</button>
-            </li>
-                  )
-                })}
-              </ul>
-            </div>
-        </section>
+            </section>
       </div>
     </div>
   );
