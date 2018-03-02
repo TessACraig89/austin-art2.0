@@ -69,22 +69,22 @@ class Header extends Component{
   }
   render(){
     return (
-      <Container>
+      <div className="header">
         <h1 className='headerTitle'>Austin Street Art</h1>
         <h2 className='headerSub'>A site dedicated to the incredible street art of Austin</h2>
-        <Row>
-          <Col><Link className="col-" to={'/art'}><button className='navButton' id='artButton'>Art</button></Link></Col>
-          <Col><Link className="toAboutLink" to={'/'}><button to={'/'}className='navButton' id='aboutButton'>About</button></Link></Col>
+        <div className="nav">
+          <Link to={'/art'}><button className='navButton' id="toArtBtn">Art</button></Link>
+          <Link to={'/'}><button to={'/'} className='navButton' id="toAboutBtn">About</button></Link>
           {this.state.user ?
-            <div>
-              <Col><button onClick={this.logout}>Logout</button></Col>
-              <Col><Link className="toAboutLink" to={'/profile'}><button className='navButton' id='aboutButton'>Profile</button></Link></Col>
+            <div className="profileNav">
+              <Link to={'/profile'}><button id="toProfileBtn" className='navButton'>Profile</button></Link>
+              <button onClick={this.logout} className='navButton' id="logoutBtn">Logout</button>
             </div>
           :
-            <Col><button onClick={this.login}>Log In</button></Col>
+            <button onClick={this.login} className='navButton' id="loginBtn">Log In</button>
           }
-      </Row>
-      </Container>
+      </div>
+      </div>
     )
   }
 }
