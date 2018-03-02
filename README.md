@@ -2,7 +2,7 @@
 
 Web application used to browse the street art of Austin, each piece of art has a title, picture, and address.
 
-Check out the (Austin Street Art Demo)[https://austin-street-art.firebaseapp.com/] here!
+Check out the [Austin Street Art Demo](https://austin-street-art.firebaseapp.com/) here!
 
 > The Austin Street Art web app is currently in production. Please follow development on [Trello](https://trello.com/b/ei25yci7/austin-wall-art-project).
 
