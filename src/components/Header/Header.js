@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import '../App.css';
-import firebase, { auth, provider } from '../config/firebase.js';
+import '../../App.css';
+import firebase, { auth, provider } from '../../config/firebase.js';
 import {Link} from 'react-router-dom';
+import { Container, Row, Col } from 'reactstrap';
 
 class Header extends Component{
   constructor() {
@@ -68,22 +69,22 @@ class Header extends Component{
   }
   render(){
     return (
-      <div className="header">
+      <Container>
         <h1 className='headerTitle'>Austin Street Art</h1>
         <h2 className='headerSub'>A site dedicated to the incredible street art of Austin</h2>
-        <nav className='nav'>
-          <Link className="toArtLink" to={'/art'}><button className='navButton' id='artButton'>Art</button></Link>
-          <Link className="toAboutLink" to={'/'}><button className='navButton' id='aboutButton'>About</button></Link>
+        <Row>
+          <Col><Link className="col-" to={'/art'}><button className='navButton' id='artButton'>Art</button></Link></Col>
+          <Col><Link className="toAboutLink" to={'/'}><button to={'/'}className='navButton' id='aboutButton'>About</button></Link></Col>
           {this.state.user ?
             <div>
-              <button onClick={this.logout}>Logout</button>
-              <Link className="toAboutLink" to={'/profile'}><button className='navButton' id='aboutButton'>Profile</button></Link>
+              <Col><button onClick={this.logout}>Logout</button></Col>
+              <Col><Link className="toAboutLink" to={'/profile'}><button className='navButton' id='aboutButton'>Profile</button></Link></Col>
             </div>
           :
-            <button onClick={this.login}>Log In</button>
+            <Col><button onClick={this.login}>Log In</button></Col>
           }
-      </nav>
-      </div>
+      </Row>
+      </Container>
     )
   }
 }

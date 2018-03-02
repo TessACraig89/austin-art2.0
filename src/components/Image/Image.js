@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../../App.css';
 import ImageUploader from 'react-firebase-image-uploader';
 import { connect } from 'react-firebase-storage-connector';
-import firebase, { auth, provider } from '../config/firebase.js';
+import firebase, { auth, provider } from '../../config/firebase.js';
 import 'firebase/database';
 
 
-class Test extends Component {
+class Image extends Component {
   constructor(props){
     super(props);
       if (!firebase.apps.length) {
@@ -79,7 +79,6 @@ class Test extends Component {
       return (
           <div>
               <form onSubmit={this.handleSubmit} onChange={this.handleChange} value={this.state.imageValue}>
-                  <label>Image:</label>
                   {this.state.isUploading &&
                       <p>Progress: {this.state.progress}</p>
                   }
@@ -93,7 +92,6 @@ class Test extends Component {
                       onUploadError={this.handleUploadError}
                       onUploadSuccess={this.handleUploadSuccess}
                       onProgress={this.handleProgress}
-                      // onChange={this.handleOnChange}
                   />
               </form>
           </div>
@@ -101,4 +99,4 @@ class Test extends Component {
   }
 }
 
-export default Test;
+export default Image;

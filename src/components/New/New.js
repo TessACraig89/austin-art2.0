@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../App.css';
-import firebase, { auth, provider } from '../config/firebase.js';
+import '../../App.css';
+import firebase, { auth, provider } from '../../config/firebase.js';
 import {Link} from 'react-router-dom';
-import Test from './Test';
+import Image from '../Image/Image';
 
 class New extends Component {
   constructor() {
@@ -105,10 +105,12 @@ class New extends Component {
                 <input type="text" name="titleName" placeholder="Title" onChange={this.handleChange} value={this.state.currentPost} />
                 <input type="text" name="locationAddress" placeholder="Location" onChange={this.handleChange} value={this.state.locationAddress} />
                 <input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageValue} />
-                {/*<Test/>*/}
+                {/*<Image/>*/}
                 <button>Add Post</button>
               </form>
-        </section>
+              <Image/>
+          </section>
+          <Link to={'/profile'}><button id='aboutButton'>Cancel</button></Link>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../App.css';
-import firebase, { auth, provider } from '../config/firebase.js';
+import '../../App.css';
+import firebase, { auth, provider } from '../../config/firebase.js';
 import {Link} from 'react-router-dom';
 import {Modal} from 'react-bootstrap';
 
@@ -201,11 +201,11 @@ class Profile extends Component {
                                               <textarea className="editthis input-lg" type='text' placeholder={post.imageURL} name='imageURL' id='imageURL'  onChange={this.handleUpdateChange}  value={this.state.imageURL}/>
                                           <br/>
                                           <br/>
-                                          <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updatePost(post)}>Save changes</button>
+                                          <button onClick={() => this.updatePost(post)}>Save changes</button>
                                       </form>
                                   </Modal.Body>
                                   <Modal.Footer>
-                                      <button type="button" className="btn btn-info btn-lg" data-dismiss="modal" onClick={this.handleClose}>Close</button>
+                                      <button data-dismiss="modal" onClick={this.handleClose}>Close</button>
                                   </Modal.Footer>
                               </Modal>
                             </div>
