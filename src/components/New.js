@@ -104,6 +104,7 @@ class New extends Component {
                 <input type="text" name="titleName" placeholder="Title" onChange={this.handleChange} value={this.state.currentPost} />
                 <input type="text" name="locationAddress" placeholder="Location" onChange={this.handleChange} value={this.state.locationAddress} />
                 <input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageValue} />
+                {/*<Test/>*/}
                 <button>Add Post</button>
               </form>
         </section>
@@ -113,10 +114,10 @@ class New extends Component {
                 {this.state.posts.map((post) => {
                   return (
                     <li key={post.id}>
-                      <h3>{post.title}</h3>
-                      <p>{post.image}
+                      <h3>Title: {post.title}</h3>
+                      <p>Image: {post.image}
                       </p>
-                      <p>Location:{post.location}
+                      <p>Location: {post.location}
                       </p>
                       <button onClick={() => this.removePost(post.id)}>Remove</button>
                     </li>

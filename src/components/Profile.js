@@ -21,20 +21,24 @@ class Profile extends Component {
       this.handleUpdateChange = this.handleUpdateChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.removePost = this.removePost.bind(this);
-      this.updateThings = this.updateThings.bind(this);
+      this.updatePost = this.updatePost.bind(this);
       this.handleShow = this.handleShow.bind(this);
       this.handleClose = this.handleClose.bind(this);
       this.login = this.login.bind(this);
       this.logout = this.logout.bind(this);
   }
-    this.setState({ showModal: false });
+  // edit modal
+  handleClose() {
+    this.setState({
+      showModal: false
+    });
   }
   handleShow(id) {
     this.setState({
       showModal: id,
     });
   }
-  // catch-all method calls, updates that input's corresponding piece of state,  using brackets to dynamically determine key name in an object literal
+  // catch all method calls, updates that input's corresponding piece of state,  using brackets to dynamically determine key name in an object literal
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -47,7 +51,7 @@ class Profile extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    // create 'posts' space in Firebase database where all posts are stored, by calling the ref method and passing in the destination we'd like them to be stored posts
+    // create 'posts' space in Firebase database where all posts are stored, by calling the ref method(represents a specific location in db) and passing in the destination we'd like them to be stored posts
     const postsRef = firebase.database().ref('posts');
     // grab the post the user typed in from the state, and package it into an object so we pass to our Firebase database
     const post = {
@@ -113,13 +117,15 @@ class Profile extends Component {
     const postRef = firebase.database().ref(`/posts/${postId}`);
     postRef.remove();
   }
-  updateThings(post) {
+  updatePost(post) {
     const postRef = firebase.database().ref(`/posts/${post.id}`);
+    // grab the updated post the user typed in from the state, and package it into an object so we pass to Firebase database
     let updates = {
       title: this.state.titleName,
       image: this.state.imageURL,
       location: this.state.locationAddress
     };
+    // once passed to db, close modal, write all (updates) values to the db 
     postRef.update(updates);
     this.handleClose();
     this.setState({
@@ -151,16 +157,17 @@ class Profile extends Component {
                           <div>
                           <h3 key={post.id}></h3>
                             <h3>{post.title}</h3>
-                    <div className="deleteBut">
+                    <div className="delete">
                         <div className="modal-container">
-                            <button type="button" className="btn btn-success btn-lg" onClick={ ()=> this.handleShow(post.id)}>Edit</button>
-                            <Modal show={this.state.showModal === post.id} onHide={this.handleClose} bsSize="large">
+                            <button onClick={ ()=> this.handleShow(post.id)}>Edit</button>
+                            {/* modal show and close method calls */}
+                            <Modal show={this.state.showModal === post.id} onHide={this.handleClose}>
                               <Modal.Header>
                                   <Modal.Title>Edit Post</Modal.Title>
                               </Modal.Header>
                               <Modal.Body>
                                   <form onSubmit={this.handleSubmit}>
-                                      <label className="label10">Title:</label>
+                                      <label>Title:</label>
                                           <input type='text' className="input-lg" name='titleName' placeholder={post.title} onChange={this.handleUpdateChange} value={this.state.titleName}/>
                                       <br/>
                                       <br/>
@@ -170,7 +177,7 @@ class Profile extends Component {
                                           <textarea className="editthis input-lg" type='text' placeholder={post.imageURL} name='imageURL' id='imageURL'  onChange={this.handleUpdateChange}  value={this.state.imageURL}/>
                                       <br/>
                                       <br/>
-                                      <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updateThings(post)}>Save changes</button>
+                                      <button type="button" className="btn btn-primary btn-lg" onClick={() => this.updatePost(post)}>Save changes</button>
                                   </form>
                               </Modal.Body>
                               <Modal.Footer>

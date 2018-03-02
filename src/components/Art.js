@@ -11,8 +11,7 @@ class Art extends Component {
         titleName: '',
         imageURL: '',
         locationAddress: '',
-        posts: [],
-        user: null
+        posts: []
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,9 +62,7 @@ class Art extends Component {
     return (
       <div className='art'>
         <header>
-            <div className="wrapper">
               <h2>Art</h2>
-            </div>
         </header>
         <div className='container'>
             <h2>Posts</h2>
