@@ -17,6 +17,8 @@ class New extends Component {
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.login = this.login.bind(this);
+      this.logout = this.logout.bind(this);
   }
   handleChange(e) {
     this.setState({
@@ -40,7 +42,29 @@ class New extends Component {
       creatorName: ''
     });
   }
+  logout() {
+    auth.signOut()
+      .then(() => {
+        this.setState({
+          user: null
+        });
+      });
+  }
+  login() {
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        const user = result.user;
+        this.setState({
+          user
+        });
+      });
+  }
   componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+      }
+    });
     const postsRef = firebase.database().ref('posts');
     postsRef.on('value', (snapshot) => {
       let posts = snapshot.val();
@@ -68,8 +92,11 @@ class New extends Component {
       <div className='new'>
         <header>
             <div className="wrapper">
-              <h1>Username</h1>
-              <h2>New Post</h2>
+              {this.state.user ?
+                <h2>{this.state.user.displayName}</h2>
+                :
+                <h2>{null}</h2>
+              }
             </div>
         </header>
         <div className='container'>
@@ -78,7 +105,6 @@ class New extends Component {
                 <input type="text" name="titleName" placeholder="Title" onChange={this.handleChange} value={this.state.currentPost} />
                 <input type="text" name="locationAddress" placeholder="Location" onChange={this.handleChange} value={this.state.locationAddress} />
                 <input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageValue} />
-                <p>
                 <button>Add Post</button>
               </form>
         </section>
