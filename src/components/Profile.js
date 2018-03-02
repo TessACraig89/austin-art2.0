@@ -173,7 +173,7 @@ class Profile extends Component {
       </Modal>
 
 </div>
-            <button className="btn btn-danger btn-lg" id="but" onClick={() => this.removePost(post.id)}>(X)</button>
+            <button onClick={() => this.removePost(post.id)}>Remove</button>
           </div>
 
 </div>

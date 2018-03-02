@@ -12,8 +12,7 @@ class New extends Component {
         titleName: '',
         imageValue: '',
         locationAddress: '',
-        posts: [],
-        creatorName: '',
+        posts: []
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,15 +30,13 @@ class New extends Component {
     const post = {
       title: this.state.titleName,
       image: this.state.imageValue,
-      location: this.state.locationAddress,
-      creator: this.state.creatorName
+      location: this.state.locationAddress
     }
     postsRef.push(post);
     this.setState({
       titleName: '',
       imageValue: '',
-      locationAddress: '',
-      creatorName: ''
+      locationAddress: ''
     });
   }
   logout() {
@@ -74,8 +71,7 @@ class New extends Component {
           id: post,
           title: posts[post].title,
           image: posts[post].image,
-          location: posts[post].location,
-          creator: posts[post].creator
+          location: posts[post].location
         });
       }
       this.setState({
@@ -119,8 +115,7 @@ class New extends Component {
                       </p>
                       <p>Location:{post.location}
                       </p>
-                      <p>Created by:{post.creator}</p>
-                      <button onClick={() => this.removePost(post.id)}>Remove Post</button>
+                      <button onClick={() => this.removePost(post.id)}>Remove</button>
                     </li>
                   )
                 })}
