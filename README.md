@@ -4,20 +4,21 @@ Web application used to browse the street art of Austin, each piece of art has a
 
 Check out the [Austin Street Art Demo](https://austin-street-art.firebaseapp.com/) here!
 
-> The Austin Street Art web app is currently in production. Please follow development on [Trello](https://trello.com/b/ei25yci7/austin-wall-art-project).
-
-
 ## Technologies
-- [Node.js](http://nodejs.org) - A server side JavaScript tool and the accompanying package manager
-- [Express.js](https://github.com/expressjs/express) - A back-end web framework for [Node.js](http://nodejs.org)
-- [jQuery](https://jquery.com/) - A JavaScript library that allows for cleaner, less verbose code
-- [EJS](http://ejs.co/) - Embedded JavaScript allows JS to be incorporated in HTML codes
-- [OAuth](https://oauth.net/) - Enables authorization of user login by 3rd party sources
-- [MongoDB](https://www.mongodb.com/)/[Mongoose](http://mongoosejs.com/) - NoSQL database used to create and store data
+- [Firebase](https://firebase.google.com/) - Firebase is a backend platform for building Web, Android and IOS applications, it offers a real time database, different APIs, multiple authentication types and hosting.
 
+- [React](https://reactjs.org/) - A library used to craft modern day UI and create views for the front-end in web, client and native applications.
+
+- [Javascript](https://www.javascript.com/) - An object-oriented computer programming language commonly used to create interactive effects within web browsers.
+
+- [JSX](https://reactjs.org/docs/introducing-jsx.html) - A syntax intended to be used by preprocessors to transform HTML-like text found in JavaScript files into standard JavaScript objects that a JavaScript engine will parse.
+
+- [CSS3](http://www.css3.info/) - Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.
+
+- [Bootstrap4](https://getbootstrap.com/) - A front-end library for designing websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions.
 ## Minimum Viable Product
 
-The Minimum Viable Product version of the Austin Art web app is a much simplified version of what the final app will be. What follows is the specs for the minimal viable product. A central Kanban board tracking development is located here on [Trello](https://trello.com/b/ei25yci7/austin-wall-art). For the most up to date developments, take a quick look inside.
+The Minimum Viable Product version of the Austin Street Art web app is a much simplified version of what the final app will be. What follows is the specs for the minimal viable product. A central Kanban board tracking development is located here on [Trello](https://trello.com/b/ei25yci7/austin-wall-art-project). For the most up to date developments, take a quick look inside.
 
 
 ### Entity Relationship Diagram
