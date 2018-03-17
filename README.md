@@ -4,6 +4,8 @@ Austin Street Art is for sharing images and locations of the many wonderful graf
 
 Check out the [Austin Street Art Demo](https://austin-street-art.firebaseapp.com/) here!
 
+![Preview](./src/static/images/preview.png)
+
 ## Technologies
 - [Firebase](https://firebase.google.com/) - Firebase is a backend platform for building Web, Android and IOS applications, it offers a real time database, different APIs, multiple authentication types and hosting.
 
@@ -21,7 +23,7 @@ Check out the [Austin Street Art Demo](https://austin-street-art.firebaseapp.com
 
 The Minimum Viable Product version of the Austin Street Art web app is a much simplified version of what the final app will be. What follows is the specs for the minimal viable product. A central Kanban board tracking development is located here on [Trello](https://trello.com/b/ei25yci7/austin-wall-art-project). For the most up to date developments, take a quick look inside.
 
-![Preview](./src/static/images/preview.png)
+
 
 > To learn more about the developer of Psyche Tracker, Tess Craig, visit her [Linkedin](https://www.linkedin.com/in/tessashleycraig/) and view her other [Github](https://github.com/TessACraig89) projects.
 
