@@ -20,40 +20,6 @@ Check out the [Austin Street Art Demo](https://austin-street-art.firebaseapp.com
 
 The Minimum Viable Product version of the Austin Street Art web app is a much simplified version of what the final app will be. What follows is the specs for the minimal viable product. A central Kanban board tracking development is located here on [Trello](https://trello.com/b/ei25yci7/austin-wall-art-project). For the most up to date developments, take a quick look inside.
 
-
-### Entity Relationship Diagram
-![Entity Relationship Diagram](./src/static/images/erd.png)
-
-### Wireframes
-
-#### Home/About Page
-
-![Home/About Page](./src/static/images/about.png)
-
-
-#### Login Page
-
-![Login Page](./src/static/images/login.png)
-
-
-#### Art Page
-
-![Art Page](./src/static/images/art.png)
-
-
-#### User Profile
-
-![User Profile Page](./src/static/images/profile.png)
-
-
-#### Editing Post
-
-![Editing User Post](./src/static/images/edit-post.png)
-
-#### New Post
-
-![New Post](./src/static/images/new-post.png)
-
 > To learn more about the developer of Psyche Tracker, Tess Craig, visit her [Linkedin](https://www.linkedin.com/in/tessashleycraig/) and view her other [Github](https://github.com/TessACraig89) projects.
 
 <!-- ## Downloading Instructions
