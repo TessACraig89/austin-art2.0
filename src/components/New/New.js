@@ -90,30 +90,37 @@ class New extends Component {
             <div className="wrapper">
               {this.state.user ?
                 <div className='user-profile'>
-                  <img src={this.state.user.photoURL} />
-                  <h2>{this.state.user.displayName}</h2>
+                  <img className="userImg" src={this.state.user.photoURL} />
+                  <h2 className="username">{this.state.user.displayName}</h2>
                 </div>
                 :
                 <h2>{null}</h2>
               }
             </div>
         </header>
-        <h3>New Post</h3>
         <div className='container'>
+        <h3 className="newPageTitle">New Post</h3>
           <section className='add-post'>
               <form onSubmit={this.handleSubmit}>
                 <input type="text" name="titleName" placeholder="Title" onChange={this.handleChange} value={this.state.currentPost} />
                 <input type="text" name="locationAddress" placeholder="Location" onChange={this.handleChange} value={this.state.locationAddress} />
                 {/*<input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageValue} />*/}
+                <ul class="instructions">
+                  Image Upload Instructions:
+                  <br></br>
+                  <li>Upload your image onto <a href="https://imgur.com/">Imgur</a></li>
+                  <li>Copy image Direct Link</li><li>Paste Direct Link into Image URL input field</li>
+                </ul>
                 <input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange}  value={this.state.imageValue} />
                 {/*<input class="col col-4 form-control my-1" style="margin: 5px;" placeholder="Kitty URL" type="text" name="url" />*/}
                 {/*<Image/>*/}
-                <button>Add Post</button>
+                <button className="newBtns">Add Post</button>
               </form>
-              <Image/>
           </section>
-          <Link to={'/profile'}><button id='aboutButton'>Cancel</button></Link>
+          <a href="/profile"><button class="newBtns" id="aboutButton">Cancel</button></a>
+          <p>Check out your new post on the <a href="/art">Art</a> page and your <a href="/profile">Profile</a> page!</p>
       </div>
+
     </div>
   );
   }

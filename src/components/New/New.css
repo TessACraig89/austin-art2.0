@@ -1,0 +1,64 @@
+.new {
+
+    position: relative;
+    top: 160px;
+    font-family: Amaranth;
+}
+
+.userImg {
+    width: 200px;
+    height: 200px;
+    border: 4px solid #000;
+    border-radius: 100px;
+}
+.newPageTitle {
+    font-size: 40px;
+    border-bottom: 10px #a289ed;
+    border-bottom-style: double;
+    border-radius: 15px;
+    padding-bottom: 5px;
+    width: 200px;
+    position: relative;
+    left: 43%;
+}
+.username {
+    font-size: 40px;
+    position: relative;
+    bottom: 20px;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+input {
+    border: 2px solid #000;
+    border-radius: 15px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.instructions {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 20px;
+}
+ul {
+    list-style-type: none;
+}
+.newBtns {
+    border-radius: 50px;
+    font-size: 20px;
+    width: 100px;
+    height: 60px;
+    border-width: 5px;
+    border-color: #000;
+    text-align: center;
+    font-family: Amaranth;
+}
+a {
+    text-decoration: none;
+}
+.container {
+  justify-content: center;
+}
