@@ -147,19 +147,20 @@ class Profile extends Component {
                 :
                 <h2>{null}</h2>
               }
-              <h2>Favorites</h2>
+              <a href="/new"><button id="profileAddBtn">ADD NEW POST</button></a>
+              <h2 className="profileTitle">Favorites</h2>
                   <section className='display-post'>
                       <div className="wrapper">
                           <ul>
                               {this.state.posts.map((post) => {
                                   return (
                                       <li key={post.id}>
-                                          <h3>{post.title}</h3>
+                                          <h3 className="profilePostTitle">{post.title}</h3>
                                           <p><img id="image" src={post.image} alt='image'/></p>
                                                 {/*<img src={require("{post.image}")} alt='image'/>
                                                 <img className="aboutCollage" src={require("../../static/images/skyline.png")}></img>*/}
-                                          <p>Location:{post.location}</p>
-                                          <button>Unfavorite</button>
+                                          <p className="profilePostLocation">Location:{post.location}</p>
+                                          <button className="unfavBtn">Unfavorite</button>
                                           {/*}{this.state.favoriteStatus = true?
                                           <div>
                                           <button onClick={this.unfavorite}>Unfavorite</button>
@@ -173,20 +174,22 @@ class Profile extends Component {
                           </ul>
                       </div>
                   </section>
-              <Link to={'/new'}><button>ADD </button></Link>
-              <h2>Posts</h2>
+              
+              <h2 className="profileTitle">Posts</h2>
                   <section className='display-post'>
                       <div className="wrapper">
-                        <ul>
+                        <ul className="list">
                           {/* once I have a list of all posts being grabbed from Firebase and stored inside state, map over it and print the results on to the page */}
                           {this.state.posts.map((post) => {
                             return (
                               <div>
                               <h3 key={post.id}></h3>
-                                <h3>{post.title}</h3>
+                                <h3 className="profilePostTitle">{post.title}</h3>
+                                <p><img id="image" src={post.image} alt='image'/></p>
+                                <p className="profilePostLocation">Location:{post.location}</p>
                         <div className="delete">
                             <div className="modal-container">
-                                <button onClick={ ()=> this.handleShow(post.id)}>Edit</button>
+                                <button onClick={ ()=> this.handleShow(post.id)} className="editBtn">Edit</button>
                                 {/* modal show and close method calls */}
                                 <Modal show={this.state.showModal === post.id} onHide={this.handleClose}>
                                   <Modal.Header>
@@ -212,7 +215,7 @@ class Profile extends Component {
                                   </Modal.Footer>
                               </Modal>
                             </div>
-                            <button onClick={() => this.removePost(post.id)}>Remove</button>
+                            <button onClick={() => this.removePost(post.id)} className="removeBtn">Remove</button>
                         </div>
                       </div>
                           )

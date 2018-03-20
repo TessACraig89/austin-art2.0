@@ -16,6 +16,71 @@ img {
   bottom: 20px;
 }
 
+#profileAddBtn {
+    border-radius: 50px;
+    font-size: 20px;
+    width: 200px;
+    height: 60px;
+    border-width: 5px;
+    border-color: #000;
+    text-align: center;
+    font-family: Amaranth;
+    position: relative;
+    bottom: 20px;
+}
+#image {
+    width: 500px;
+    height: 350px;
+    border: 5px solid #000;
+    border-radius: 15px;
+    bottom: 20px;
+}
+.profilePostLocation {
+    font-size: 20px;
+}
+.unfavBtn {
+    border-radius: 50px;
+    font-size: 20px;
+    width: 150px;
+    height: 60px;
+    border-width: 5px;
+    border-color: #000;
+    text-align: center;
+    font-family: Amaranth;
+}
+.editBtn {
+    border-radius: 50px;
+    font-size: 20px;
+    width: 150px;
+    height: 60px;
+    border-width: 5px;
+    border-color: #000;
+    text-align: center;
+    font-family: Amaranth;
+    position: relative;
+}
+.removeBtn {
+    border-radius: 50px;
+    font-size: 20px;
+    width: 150px;
+    height: 60px;
+    border-width: 5px;
+    border-color: #000;
+    text-align: center;
+    font-family: Amaranth;
+    position: relative;
+}
+.profileTitle {
+    font-size: 40px;
+    border-bottom: 10px #a289ed;
+    border-bottom-style: double;
+    border-radius: 15px;
+    font-family: Amaranth;
+    padding-bottom: 5px;
+}
+.profilePostTitle {
+    font-size: 30px;
+}
 .profile {
   position: relative;
   top: 160px;
