@@ -70,6 +70,18 @@ img {
     font-family: Amaranth;
     position: relative;
 }
+.profilePostsAndFavorites {
+    display: flex;
+
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 20px;
+}
+
+#removeAndEdit {
+  display: flex;
+  flex-direction: row;
+}
 .profileTitle {
     font-size: 40px;
     border-bottom: 10px #a289ed;

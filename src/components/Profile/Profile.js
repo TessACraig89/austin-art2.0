@@ -148,6 +148,8 @@ class Profile extends Component {
                 <h2>{null}</h2>
               }
               <a href="/new"><button id="profileAddBtn">ADD NEW POST</button></a>
+              <div id="favorites" className="profilePostsAndFavorites">
+              <div className="col-6">
               <h2 className="profileTitle">Favorites</h2>
                   <section className='display-post'>
                       <div className="wrapper">
@@ -174,7 +176,8 @@ class Profile extends Component {
                           </ul>
                       </div>
                   </section>
-              
+              </div>
+              <div className="col-6">
               <h2 className="profileTitle">Posts</h2>
                   <section className='display-post'>
                       <div className="wrapper">
@@ -188,8 +191,16 @@ class Profile extends Component {
                                 <p><img id="image" src={post.image} alt='image'/></p>
                                 <p className="profilePostLocation">Location:{post.location}</p>
                         <div className="delete">
+<div id="removeAndEdit" className="row">
+<div id="removeCol" className="col-6">
+                          <button onClick={() => this.removePost(post.id)} className="removeBtn">Remove</button>
+</div>
+<div id="editCol" className="col-6">
                             <div className="modal-container">
+
                                 <button onClick={ ()=> this.handleShow(post.id)} className="editBtn">Edit</button>
+</div>
+                      </div>
                                 {/* modal show and close method calls */}
                                 <Modal show={this.state.showModal === post.id} onHide={this.handleClose}>
                                   <Modal.Header>
@@ -215,7 +226,7 @@ class Profile extends Component {
                                   </Modal.Footer>
                               </Modal>
                             </div>
-                            <button onClick={() => this.removePost(post.id)} className="removeBtn">Remove</button>
+
                         </div>
                       </div>
                           )
@@ -223,6 +234,8 @@ class Profile extends Component {
                         </ul>
                     </div>
                   </section>
+          </div>
+        </div>
       </div>
     </div>
     )
