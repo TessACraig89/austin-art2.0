@@ -78,9 +78,14 @@ img {
     bottom: 20px;
 }
 
+button:hover {
+  background-color: #a289ed;
+}
+
 #removeAndEdit {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 .profileTitle {
     font-size: 40px;
