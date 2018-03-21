@@ -112,10 +112,10 @@ class New extends Component {
 
               {/*<input type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange} value={this.state.imageValue} />*/}
                 <ul class="instructions">
-                  Image Upload Instructions:
+                  <h4 className="upload">Image Upload Instructions:</h4>
                   <br></br>
-                  <li>Upload your image onto <a href="https://imgur.com/">Imgur</a></li>
-                  <li>Copy image Direct Link</li><li>Paste Direct Link into Image URL input field</li>
+                  <li className="one"><span  className="num">1</span> Upload your image onto <a href="https://imgur.com/">Imgur</a></li>
+                  <li className="two"><span className="num">2</span> Copy image Direct Link</li><li className="three"><span className="num">3</span> Paste Direct Link into Image URL input field</li>
                 </ul>
                 <input id="imageInput" type="text" name="imageValue" placeholder="Image URL" onChange={this.handleChange}  value={this.state.imageValue} />
                 {/*<input class="col col-4 form-control my-1" style="margin: 5px;" placeholder="Kitty URL" type="text" name="url" />*/}

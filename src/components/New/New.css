@@ -26,10 +26,39 @@
   top: 60px;
 }
 #imageInput {
-  position: relative;
-    bottom: 104px;
-    left: 30%;
+    position: relative;
     width: 30%;
+    padding: 10px;
+    border: black solid 5px;
+    border-radius: 50px;
+}
+
+.upload {
+  font-size: 25px;
+    position: relative;
+    bottom: 50px;
+}
+
+.one {
+  position: relative;
+    bottom: 85px;
+}
+
+.two {
+      position: relative;
+    bottom: 50px;
+    right: 34px;
+
+}
+.three {
+    position: relative;
+    bottom: 15px;
+    left: 53px;
+
+}
+
+li {
+  font-size: 20px;
 }
 
 .line {
@@ -59,6 +88,12 @@
     border: black solid 5px;
     border-radius: 50px;
     top: 40px;
+}
+
+.num {
+  border: black solid 2px;
+  border-radius: 50px;
+  padding: 10px 20px;
 }
 .checkOut {
   font-size: 30px;
