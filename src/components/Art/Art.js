@@ -71,7 +71,7 @@ class Art extends Component {
                                 return (
                                     <li key={post.id}>
                                         <h2 className="postTitle">{post.title}</h2>
-                                        <p className="postImg">{post.image}</p>
+                                        <p className="postImg">src={post.image}</p>
                                         <p className="postLocation">Location : {post.location}</p>
                                         <button className="artBtn"> &hearts;</button>
                                         {/*}{this.state.favoriteStatus = true?

@@ -199,8 +199,8 @@ class Profile extends Component {
 </div>
 <div id="editCol" className="col-6">
                             <div className="modal-container">
-
-                                <button onClick={ ()=> this.handleShow(post.id)} className="editBtn">Edit</button>
+{/*onClick={ ()=> this.handleShow(post.id)} */}
+                                <button  className="editBtn">Edit</button>
 </div>
                       </div>
                                 {/* modal show and close method calls */}

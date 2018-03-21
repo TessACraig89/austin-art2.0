@@ -22,21 +22,32 @@
     left: 43%;
 }
 #addPost {
-  position: relative;
-  top: 60px;
+      position: relative;
+    RIGHT: 28%;
+    bottom: 44px;
 }
 #imageInput {
     position: relative;
     width: 30%;
     padding: 10px;
     border: black solid 5px;
+    left: 30%;
+    bottom: 40px;
     border-radius: 50px;
+    background-color: white;
+}
+
+#aboutButton{
+  position: relative;
+    right: 36%;
+    bottom: 105px;
 }
 
 .upload {
   font-size: 25px;
     position: relative;
     bottom: 50px;
+    left: 4%;
 }
 
 .one {
@@ -68,21 +79,22 @@ li {
 .line2 {
   border-bottom: black solid 5px;
 }
+
+button:focus {outline:0;}
+input:focus {outline:0;}
 .locationAddress {
   position: relative;
-  top: 140px;
-  right: 35%;
+    top: 140px;
+    right: 40%;
     position: relative;
-
     width: 30%;
     padding: 10px;
     border: black solid 5px;
     border-radius: 50px;
-
 }
 .titleName {
       position: relative;
-    right: 100px;
+    right: 8%;
     width: 30%;
     padding: 10px;
     border: black solid 5px;
@@ -97,6 +109,8 @@ li {
 }
 .checkOut {
   font-size: 30px;
+    position: relative;
+    bottom: 89px;
 }
 .username {
     font-size: 40px;
