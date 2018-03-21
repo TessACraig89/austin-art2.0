@@ -21,6 +21,48 @@
     position: relative;
     left: 43%;
 }
+#addPost {
+  position: relative;
+  top: 60px;
+}
+#imageInput {
+  position: relative;
+    bottom: 104px;
+    left: 30%;
+    width: 30%;
+}
+
+.line {
+  border-bottom: black solid 5px;
+}
+
+.line2 {
+  border-bottom: black solid 5px;
+}
+.locationAddress {
+  position: relative;
+  top: 140px;
+  right: 35%;
+    position: relative;
+
+    width: 30%;
+    padding: 10px;
+    border: black solid 5px;
+    border-radius: 50px;
+
+}
+.titleName {
+      position: relative;
+    right: 100px;
+    width: 30%;
+    padding: 10px;
+    border: black solid 5px;
+    border-radius: 50px;
+    top: 40px;
+}
+.checkOut {
+  font-size: 30px;
+}
 .username {
     font-size: 40px;
     position: relative;
@@ -42,6 +84,9 @@ input {
     -ms-flex-direction: column;
     flex-direction: column;
     font-size: 20px;
+position: relative;
+    left: 20%;
+    bottom: 35px;
 }
 ul {
     list-style-type: none;

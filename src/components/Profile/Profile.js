@@ -138,7 +138,7 @@ class Profile extends Component {
   render() {
     return (
       <div className='profile'>
-          <div className='container'>
+          <div className='container-fluid'>
               {this.state.user ?
                 <div className='user-profile'>
                   <img className="userImg" src={this.state.user.photoURL} />
@@ -162,6 +162,7 @@ class Profile extends Component {
                                                 {/*<img src={require("{post.image}")} alt='image'/>
                                                 <img className="aboutCollage" src={require("../../static/images/skyline.png")}></img>*/}
                                           <p className="profilePostLocation">Location:{post.location}</p>
+
                                           <button className="unfavBtn">Unfavorite</button>
                                           {/*}{this.state.favoriteStatus = true?
                                           <div>
@@ -186,6 +187,7 @@ class Profile extends Component {
                           {this.state.posts.map((post) => {
                             return (
                               <div>
+
                               <h3 key={post.id}></h3>
                                 <h3 className="profilePostTitle">{post.title}</h3>
                                 <p><img id="image" src={post.image} alt='image'/></p>
@@ -237,6 +239,7 @@ class Profile extends Component {
           </div>
         </div>
       </div>
+
     </div>
     )
   }

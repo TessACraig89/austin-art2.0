@@ -98,3 +98,13 @@ img {
   top: 160px;
   font-family:'Amaranth';
 }
+div.modal-content {
+  width: auto;
+  height: 400px;
+  border: black 2px solid;
+  position: relative;
+  left: 50%;
+  bottom: 200px;
+color: white;
+background-color: black;
+}
